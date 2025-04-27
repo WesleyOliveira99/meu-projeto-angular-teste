@@ -1,0 +1,53 @@
+<div class="container mt-1 w-100">
+  <div class="row w-100" *ngIf = "showModalSucesso">
+    <div class="col-12" style="display: flex; justify-content: center;">
+      <div class="alert alert-success modalSucesso" id="modalSucesso" role="alert">
+        ferramenta adicionada com sucesso!
+      </div>    
+    </div>
+  </div>
+  <div class="row w-100">
+    <div class="col-12" style="margin-bottom: 50px;">
+      <table>
+        <thead>
+          <tr>
+            <th class="col-1">id</th>
+            <th class="col-2">Nome</th>
+            <th class="col-5">Descrição</th>
+            <th class="col-1">Potência</th>
+            <th class="col-2">Fornecedor</th>
+            <th class="col-1">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ferramenta of ferramentas">
+            <td class="col-1">{{ ferramenta.id }}</td>
+            <td class="col-2">{{ ferramenta.nome }}</td>
+            <td class="col-5">{{ ferramenta.descricao }}</td>
+            <td class="col-1">{{ ferramenta.potencia }}</td>
+            <td class="col-2">{{ ferramenta.fornecedor }}</td>
+            <td>
+              <span class="delete-btn col-1" (click)="deletarFerramenta(ferramenta.id)" style="cursor: pointer;">🗑️</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row w-100">
+    <div class="col-12">
+      <div>
+        <div class="row w-100" style="margin-left: 2px; display: flex; justify-content: center; background-color: aqua;">Adicionar ferramenta</div>
+        <div class="col-12">
+          <input class="col-2" [(ngModel)]="nome" type="text" placeholder="nome">
+          <input class="col-6" [(ngModel)]="descricao" type="text" placeholder="descricao">
+          <input class="col-2" [(ngModel)]="potencia" type="text" placeholder="potencia">
+          <input class="col-2" [(ngModel)]="fornecedor" type="text" placeholder="fornecedor">
+        </div>
+        <button class="adicionar"  [disabled]="!verifyForm()" (click)="adicionarFerramenta()">adicionar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

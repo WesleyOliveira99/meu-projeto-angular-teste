@@ -1,0 +1,23 @@
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #484d66;
+  color: white;
+}
+
+.modalSucesso{
+  width: 300px;
+  justify-content: center;
+  position: absolute;
+
+}
+.adicionar{
+  margin: 20px;
+  display: flex;
+  justify-self: end;
+}

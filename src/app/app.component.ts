@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ListaFerramentasComponent } from './lista-ferramentas/lista-ferramentas.component';
+import { ListaClientesComponent } from './components/cliente/cliente.component';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [ListaFerramentasComponent,ListaClientesComponent], 
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'lista-ferramentas-angular';
+ 
 }
+
