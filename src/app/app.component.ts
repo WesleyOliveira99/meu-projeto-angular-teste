@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { ListaFerramentasComponent } from './lista-ferramentas/lista-ferramentas.component';
-import { ListaClientesComponent } from './components/cliente/cliente.component';
-import { Router } from '@angular/router';
-
+import { RouterOutlet } from '@angular/router'; // Importando RouterOutlet para usá-lo no template
 
 @Component({
   selector: 'app-root',
-  imports: [ListaFerramentasComponent,ListaClientesComponent], 
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  standalone: true,
+  template: `
+    <router-outlet></router-outlet>  <!-- Isso renderiza o conteúdo da rota ativa -->
+  `,
+  imports: [RouterOutlet]  // Incluindo o RouterOutlet aqui
 })
 export class AppComponent {
   title = 'lista-ferramentas-angular';

@@ -2,13 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Cliente, ClienteService } from '../../services/cliente.service';
-import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-cliente',
-  imports: [CommonModule, FormsModule,RouterModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './cliente.component.html',
   styleUrl: './cliente.component.css',
+  standalone: true
 })
 export class ListaClientesComponent implements OnInit {
   clientes: Cliente[] = [];

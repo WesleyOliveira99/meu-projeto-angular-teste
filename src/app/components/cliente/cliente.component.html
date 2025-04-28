@@ -14,7 +14,6 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Nome</th>
             <th>Data de Nascimento</th>
             <th>CPF</th>
@@ -24,7 +23,6 @@
         </thead>
         <tbody>
           <tr *ngFor="let cliente of clientes">
-            <td>{{ cliente.id }}</td>
             <td>{{ cliente.nome }}</td>
             <td>{{ cliente.dataNascimento | date:'dd/MM/yyyy' }}</td> 
             <td>{{ cliente.cpf }}</td>
