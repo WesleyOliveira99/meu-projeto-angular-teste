@@ -1,0 +1,59 @@
+<div class="container mt-1 w-100">
+  <!-- Modal de sucesso -->
+  <div class="row w-100" *ngIf="showModalSucesso">
+    <div class="col-12" style="display: flex; justify-content: center;">
+      <div class="alert alert-success modalSucesso" id="modalSucesso" role="alert">
+        Ferramenta adicionada com sucesso!
+      </div>    
+    </div>
+  </div>
+
+  <!-- Tabela de clientes -->
+  <div class="row w-100">
+    <div class="col-12" style="margin-bottom: 50px;">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th class="col-2">Nome</th>
+            <th class="col-5">Descrição</th>
+            <th class="col-1">Potência</th>
+            <th class="col-2">Fornecedor</th>
+            <th class="col-1">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ferramenta of ferramentas">
+            <td class="col-2">{{ ferramenta.nome }}</td>
+            <td class="col-5">{{ ferramenta.descricao }}</td>
+            <td class="col-1">{{ ferramenta.potencia }}</td>
+            <td class="col-2">{{ ferramenta.fornecedor }}</td>
+            <td>
+              <span class="delete-btn col-1" (click)="deletarFerramenta(ferramenta.id)" style="cursor: pointer;">🗑️</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div>
+    <div class="row w-100" style="text-align: center;">Adicionar Ferramenta</div>
+    <form ngForm>
+      <div class="form-row w-100" style="display: flex; justify-content: center;">
+        <div class="col-2" style="margin: 2px;">
+          <input name="nome" [(ngModel)]="nome" type="text" class="form-control" placeholder="Nome" required>
+        </div>
+        <div class="col-2" style="margin: 2px;">
+          <input name="descricao" [(ngModel)]="descricao" type="date" class="form-control" placeholder="descricao" required>
+        </div>
+        <div class="col-4" style="margin: 2px;">
+          <input name="potencia" [(ngModel)]="potencia" type="text" class="form-control" placeholder="potencia" required>
+        </div>
+        <div class="col-4" style="margin: 2px;">
+          <input name="fornecedor" [(ngModel)]="fornecedor" type="text" class="form-control" placeholder="fornecedor" required>
+        </div>
+      </div>
+    </form>    
+    <button class="adicionar"  [disabled]="!verifyForm()" (click)="adicionarFerramenta()">adicionar</button>
+  </div>
+</div>

@@ -1,0 +1,93 @@
+/* Estilo para o Modal de Sucesso */
+.modalSucesso {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 5px;
+  display: none;
+}
+
+/* Estilo para a tabela */
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f8f9fa;
+}
+
+td {
+  background-color: #ffffff;
+}
+
+/* Estilo para os botões */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para os inputs */
+input[type="text"], input[type="date"] {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Ajustes gerais */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: center;
+}
+
+.col-3 {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.delete-btn {
+  color: red;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  text-decoration: underline;
+}

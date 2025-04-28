@@ -1,0 +1,60 @@
+<div class="container mt-1 w-100">
+  <!-- Modal de sucesso -->
+  <div class="row w-100" *ngIf="showModalSucesso">
+    <div class="col-12" style="display: flex; justify-content: center;">
+      <div class="alert alert-success modalSucesso" id="modalSucesso" role="alert">
+        Cliente adicionado com sucesso!
+      </div>    
+    </div>
+  </div>
+
+  <!-- Tabela de clientes -->
+  <div class="row w-100">
+    <div class="col-12" style="margin-bottom: 50px;">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Data de Nascimento</th>
+            <th>CPF</th>
+            <th>Telefone</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clientes">
+            <td>{{ cliente.nome }}</td>
+            <td>{{ cliente.dataNascimento | date:'dd/MM/yyyy' }}</td> 
+            <td>{{ cliente.cpf }}</td>
+            <td>{{ cliente.telefone }}</td>
+            <td>
+              <span class="delete-btn" (click)="deletarCliente(cliente.id)" style="cursor: pointer;">🗑️</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Formulário para adicionar cliente -->
+  <div>
+    <div class="row w-100" style="text-align: center;">Adicionar Cliente</div>
+    <form ngForm>
+      <div class="form-row w-100" style="display: flex; justify-content: center;">
+        <div class="col-2" style="margin: 2px;">
+          <input name="nome" [(ngModel)]="nome" type="text" class="form-control" placeholder="Nome" required>
+        </div>
+        <div class="col-2" style="margin: 2px;">
+          <input name="dataNascimento" [(ngModel)]="dataNascimento" type="date" class="form-control" placeholder="Data de Nascimento" required>
+        </div>
+        <div class="col-4" style="margin: 2px;">
+          <input name="cpf" [(ngModel)]="cpf" type="text" class="form-control" placeholder="CPF" required>
+        </div>
+        <div class="col-4" style="margin: 2px;">
+          <input name="telefone" [(ngModel)]="telefone" type="text" class="form-control" placeholder="Telefone" required>
+        </div>
+      </div>
+    </form>    
+    <button class="btn btn-primary" [disabled]="!verifyForm()" (click)="adicionarCliente()">Adicionar</button>
+  </div>
+</div>
